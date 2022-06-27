@@ -8,3 +8,6 @@
  - ["Hebbian theory" als model fürs lernen der neuronen](https://en.m.wikipedia.org/wiki/Hebbian_theory)
 
  - [Spike timing dependant plasticity](https://en.m.wikipedia.org/wiki/Spike-timing-dependent_plasticity)
+
+ ## convolutional neural networks
+ - [link1](https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939)
