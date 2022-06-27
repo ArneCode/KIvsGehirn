@@ -1,5 +1,8 @@
-[visueller Cortex Convolutional neural Network Vergleich](https://medium.com/@gopalkalpande/biological-inspiration-of-convolutional-neural-network-cnn-9419668898ac)
+ - [visueller Cortex Convolutional neural Network Vergleich](https://medium.com/@gopalkalpande/biological-inspiration-of-convolutional-neural-network-cnn-9419668898ac)
 
-([wie Neuronen Lernen](https://www.scientificamerican.com/article/the-brain-learns-in-unexpected-ways/#:~:text=In%201949%20psychologist%20Donald%20Hebb,happens%2C%20learning%20has%20taken%20place.))
+ - [Receptive fields in the visual cortex (wikipedia)](https://en.wikipedia.org/wiki/Convolutional_neural_network#Receptive_fields_in_the_visual_cortex)
+     - ([link über den wikipedia spricht](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1557912/))
 
-["Hebbian theory" als erklärung für lernen](https://en.m.wikipedia.org/wiki/Hebbian_theory)
+ - ~~[wie Neuronen Lernen](https://www.scientificamerican.com/article/the-brain-learns-in-unexpected-ways/#:~:text=In%201949%20psychologist%20Donald%20Hebb,happens%2C%20learning%20has%20taken%20place.)~~
+
+ - ["Hebbian theory" als model fürs lernen der neuronen](https://en.m.wikipedia.org/wiki/Hebbian_theory)
