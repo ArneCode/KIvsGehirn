@@ -23,7 +23,7 @@
 
 [sidebarjs-backdrop] {
   position: absolute;
-  background: black;
+  background: #000;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
