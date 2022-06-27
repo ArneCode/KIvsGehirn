@@ -1,0 +1,1 @@
+[visueller Cortex Convolutional neural Network Vergleich](https://medium.com/@gopalkalpande/biological-inspiration-of-convolutional-neural-network-cnn-9419668898ac)
