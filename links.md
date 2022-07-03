@@ -11,3 +11,4 @@
 
  ## convolutional neural networks
  - [link1](https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939)
+ - [animation](https://miro.medium.com/max/1400/1*ulfFYH5HbWpLTIfuebj5mQ.gif)
