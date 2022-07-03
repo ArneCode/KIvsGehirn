@@ -40,7 +40,9 @@
         }
         /*div to open sidebar on the left*/
         #sidebar-open {
-            position: absolute;
+            position: fixed;
+            border-radius: 10px;
+            padding: 20px;
             top: 0;
             left: 0;
             width: 100%;
@@ -58,6 +60,12 @@
             padding-right: 50px;
             font-weight: bold;
         }
+        #sidebar-button{
+            border-radius: 10px;
+            border: 2px solid grey;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
     </style>
     <!--import stylesheet at sidebarjs.css-->
     <link rel="stylesheet" href="sidebarjs.css">
@@ -66,7 +74,7 @@
 </head>
 
 <body>
-    <div sidebarjs-toggle id="sidebar-open">Open/Close</div>
+    <div sidebarjs-toggle id="sidebar-open"><span id="sidebar-button">Inhaltsangabe</span></div>
     <div sidebarjs>
       <nav>
         <div id="toc">
