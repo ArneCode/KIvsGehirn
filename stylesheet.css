@@ -8,4 +8,15 @@ img{
 
 .note{
  border: 3px solid red; 
+ color: red;
+ font-weight: bold;
+}
+.orange{
+ color:#FF6600; 
+}
+.magenta{
+ color: #FF00FF; 
+}
+.cyan{
+ color: #00FFBB; 
 }
