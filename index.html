@@ -47,7 +47,17 @@
             height: 100%;
             z-index: -1;
         }
-        
+        .quote{
+            padding: 20px;
+            background-color: rgba( 0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .quote-author{
+            text-align: right;
+            padding: 0%;
+            padding-right: 50px;
+            font-weight: bold;
+        }
     </style>
     <!--import stylesheet at sidebarjs.css-->
     <link rel="stylesheet" href="sidebarjs.css">
@@ -56,8 +66,6 @@
 </head>
 
 <body>
-   
-    
     <div sidebarjs-toggle id="sidebar-open">Open/Close</div>
     <div sidebarjs>
       <nav>
@@ -77,6 +85,14 @@
     <h2>
         Aufbau eines neuronalen Netzwerkes    
     </h2>
+    <div class="quote"><i>
+        A neural network is a machine learning algorithm that is used to model complex patterns in data. 
+        Neural networks are similar to other machine learning algorithms, 
+        but they are composed of a large number of interconnected processing nodes, or neurons, 
+        that can learn to recognize patterns of input data.
+    </i>
+    <p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
+    </div>
     <p class="note">
         Hinweis: Hier wird sich auf eine Art von neuronalen Netzwerken beschränkt, anhand der sich Parallelen zum Gehirn gut erklären lassen. Das Gesagte trifft nicht auf jedes neuronale Netzwerk zu     
     </p>
@@ -145,6 +161,14 @@
         Diese Netze werden dann wieder getestet usw. . Ein Beispiel solchen Lernens kann man hier sehen:  <div class="link"><a href="https://arnecode.github.io/flappy-bird-ai/" target="_blank"><img src="images/flappyai.png" width="20%" alt="https://arnecode.github.io/flappy-bird-ai/"></a></div>
         Diese Art des Lernens ist zwar einfach, hört aber in komplexeren Aufgabenbereichen auf zu funktionieren. Deshalb gibt es noch eine andere Technik namens „Gradient Descent“</p>
     <h3>Gradient Descent</h3>
+    <div class="quote"><i>
+        Gradient descent is a method for optimization. 
+        It is an iterative method that minimizes a function by following the gradient of the function. 
+        The gradient is the direction of the steepest descent. 
+        The algorithm is used in machine learning to find the parameters of a model that minimize a cost function.
+    </i>
+    <p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
+    </div>
     <p>
         Hier wird das Modell anhand von vorher gesammelten Datenpaaren trainiert, dem Input und dem gewünschten Output. 
         Ein Beispiel wäre hier wie ein Mensch über einen längeren Zeitraum Flappy Bird spielt.
@@ -168,7 +192,10 @@
     </p>
     <p>
         Bei mehreren Neuronen kann man sich das genauso vorstellen.
-        
+        Angenommen an einem bestimmten Zeitpunkt hat das Modell folgende Entscheidungen getroffen.
+        <img src="images/multi_neuron_network_output.jpg">
+        Die Verbindungen werden nun so angepasst, dass die gewünschte Entscheidung wahrscheinlicher wird. Grün für positive Veränderung, Rot für negative.
+        <img src="images/multi_neuron_network_weights_adjusted.jpg">
     </p>
 <h2>Convolutional Neuronal Networks (CNN) - Rezeptives Feld</h2>
 <p class="note">
@@ -179,6 +206,13 @@
     Auf der Netzhaut befinden sich deutlich mehr Rezeptoren als Nervenfasern im Sehnerv. Deshalb müssen die Informationen schon an diesem Punkt verrechnet und interpretiert werden. Es werden, bevor Signale in das Gehirn gelangen schon vereinfachte Muster wie z.B. Striche, Formen oder anderes dargestellt. (wie das genau funktioniert und was dabei herauskommt weiß man nicht, dafür ist das Gehirn zu wenig erforscht)
 </p>
 <h3>Convolutional Neuronal Networks:</h3>
+<div class="quote"><i>
+    A convolutional neural network (CNN) is a type of deep learning neural network that is generally used to analyze visual imagery. 
+    CNNs are similar to traditional neural networks in that they are made up of neurons that have learnable weights and biases. 
+    However, CNNs are different in that they have a special architecture that is specifically designed to take advantage of the 2D structure of images.
+</i>
+<p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
+</div>
 <p>
     CNNs sind eine Form von hidden layers bestehend aus Filtern. Ein Filter ist (normalerweise) ein 3x3 Block gefüllt mit weights, wodurch ein bestimmtes Muster repräsentiert wird. Dieser scannt das vorliegende Bild und erkennt anhand der endgültigen Werte die Muster.
 </p>
