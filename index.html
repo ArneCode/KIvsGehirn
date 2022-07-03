@@ -76,7 +76,24 @@
     <h1>
         <h1>Künstliche Intelligenz Gehirn vergleich</h1>
     </h1>
-        <img src=https://i.pinimg.com/originals/70/c4/76/70c476d84935edc8c75d5c2685ad1cf1.jpg alt="ne man" /> <br>
+    <h2>
+        Aufbau eines neuronalen Netzwerkes    
+    </h2>
+    <p class="note">
+        Hinweis: Hier wird sich auf eine Art von neuronalen Netzwerken beschränkt, anhand der sich Parallelen zum Gehirn gut erklären lassen. Das Gesagte trifft nicht auf jedes neuronale Netzwerk zu     
+    </p>
+    <p>
+        Ein neuronales Netzwerk besteht, wie der Name erahnen lässt aus mehreren miteinander vernetzten Neuronen.     
+    </p>    
+    <img src="/images/simple_neural_network.png" alt="Here should be an image"/>
+    <p class="note">
+        Hinweis: Neuronale Netzwerke bestehen in der Regel aus weitaus mehr Neuronen als hier dargestellt 
+    </p>
+    <p>
+       Die Verbindungen zwischen den digitalen Neuronen entsprechen den biologischen Synapsen, die eigentlichen Neuronen allem anderem. Die Verbindungen besitzen einen Wert namens <em>weight</em>, der jede <a href="https://de.wikipedia.org/wiki/Reelle_Zahl">reelle Zahl</a> sein kann. Neuronen haben 2 Werte, ihre <em>activation</em>(0.0-1.0) und ihre <em>bias</em>(ebenfalls jede reelle Zahl). <em>Weight</em> und <em>bias</em> werden durch den Lernprozess verändert, die <em>activation</em> ändert sich bei jeder Anwendung der Netzwerkes.
+    </p>
+     <img src="/images/compare_neurons.png" alt="Here should be an image"/>
+    
     <h2>Lernen</h2>
     <h3>Wie das Gehirn lernt</h3>
     Wie das Gehirn lernt ist nicht genau bekannt. Wir würden hier zum Projekt der Gruppe verweisen die sich damit befasst.
@@ -93,7 +110,7 @@
         Bei dieser Technik werden mehrere Netze mit zufälligen Weights initialisiert. 
         Dann wird getestet wie gut diese Modelle arbeiten und ihnen wird eine gewisse Punkteanzahl zugeteilt. 
         Danach wird das beste Modell immer wieder leicht verändert kopiert um eine neue, bessere Generation zu erschaffen. 
-        Diese Netze werden dann wieder getestet usw. . Ein Beispiel solchen Lernens kann man hier sehen:  <div class="link"><a href="https://arnecode.github.io/flappy-bird-ai/" target="_blank"><img src="images/flappyai.png" width="20%" alt="https://arnecode.github.io/flappy-bird-ai/"></a></div>
+        Diese Netze werden dann wieder getestet usw. . Ein Beispiel solchen Lernens kann man hier sehen:  <div class="link"><a href="https://arnecode.github.io/flappy-bird-ai/" target="_blank"><img src="flappyai.png" width="20%" alt="https://arnecode.github.io/flappy-bird-ai/"></a></div>
         Diese Art des Lernens ist zwar einfach, hört aber in komplexeren Aufgabenbereichen auf zu funktionieren. Deshalb gibt es noch eine andere Technik namens „Gradient Descent“</p>
     <h3>Gradient Descent</h3>
     <p>
@@ -109,10 +126,10 @@
         </details>
         Wir gehen zuerst einmal von einem sehr einfachem Neuronalen Netz aus. 
         Es hat einen Input und einen Output. Der Output soll immer der Input mal zwei sein.
-        <img src="images/single_neuron.jpg">
+        <img src="single_neuron.jpg">
         Wenn man das Netzwerk zuerst zufällig initialisiert, werden die Werte nichts mit dem gewünschten Ergebnis zu tun haben.
         Während des Lernens wird für jedes Datenpaar berechnet wie weit die Ausgabe des Neuronalen Netzes für einen gegebenen Input von dem gewünschten Output entfernt ist.
-        <img src="images/single_neuron_output.jpg">
+        <img src="single_neuron_output.jpg">
         Dann werden die Weights so angepasst, dass das Ergebnis eher den gewünschten ähnelt. </br>
         In diesem Fall ist der Output kleiner als das gewünschte Ergebnis. <br>
         &nbsp;&nbsp;&nbsp;&nbsp;<strong style="font-family: calibri;font-size: 15px;">→</strong> Die Verbindung zwischen Input und Output wird verstärkt.
