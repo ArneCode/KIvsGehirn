@@ -8,8 +8,11 @@ img{
 
 .note{
  border: 3px solid red; 
+ border-radius: 8px;
  color: red;
  text-align: center;
+ background-color: rgba(255, 0, 0, 0.2);
+ padding: 10px;
 }
 .orange{
  color:#FF6600; 
