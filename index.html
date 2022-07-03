@@ -93,7 +93,14 @@
        Die Verbindungen zwischen den digitalen Neuronen entsprechen den biologischen Synapsen, die eigentlichen Neuronen allem anderem. Die Verbindungen besitzen einen Wert namens <em>weight</em>, der jede <a href="https://de.wikipedia.org/wiki/Reelle_Zahl">reelle Zahl</a> sein kann. Neuronen haben 2 Werte, ihre <em>activation</em>(0.0-1.0) und ihre <em>bias</em>(ebenfalls jede reelle Zahl). <em>Weight</em> und <em>bias</em> werden durch den Lernprozess verändert, die <em>activation</em> ändert sich bei jeder Anwendung der Netzwerkes.
     </p>
      <img src="images/compare_neurons.png" alt="Here should be an image"/>
-    
+    <p>
+        Die Neuronen sind in mehreren Schichten bzw. Layers angeordnet. Jedes Neuron hat eine Verbindung zu jedem anderen in den Layers davor und danach. Die erste Layer nennt man <span class="orange">Input-Layer</span> und die Letzte <span class="magenta">Output-Layer</span>. Dazwischen können sich noch mehrere sogenannte <span class="cyan">hidden layers</span> befinden, ein simples Netzwerk kann aber auch ohne hidden layers funktionieren.
+    </p>
+     <img src="images/the_layers.png"/>
+    <p>
+        Durch diesen Aufbau lässt sich das Reiz-Reaktions-Schema auch gut auf das neuronale Netzwerk anwenden. Der <span class="orange">Reiz</span> sind hier die Informationen, die der <span class="orange">Input-Layer (dem Rezeptor)</span> übergeben werden, also die <em>activation</em> aller Neuronen der Layer. Dieser <span class="orange">Reiz</span> wird dann durch die <span class="cyan">hidden layers</span> weiter verarbeitet, die hier eine dem <span class="cyan">zentralen Nervensystem</span> ähnliche Rolle annehmen. Die <span class="magenta">Output-Layer</span> repräsentiert letztendlich den <span class="magenta">Effektor</span>, die <em>activations</em> ihrer Neuronen sind die Reaktion. Diese <em>activations</em> können dann in den eigentlichen Output übersetzt werden, z.B. Bild, Text oder Audio.    
+    </p>
+    <h2>Vom Input zum Output</h2>
     <h2>Lernen</h2>
     <h3>Wie das Gehirn lernt</h3>
     Wie das Gehirn lernt ist nicht genau bekannt. Wir würden hier zum Projekt der Gruppe verweisen die sich damit befasst.
