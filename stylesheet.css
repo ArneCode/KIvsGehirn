@@ -9,7 +9,7 @@ img{
 .note{
  border: 3px solid red; 
  color: red;
- font-weight: bold;
+ text-align: center;
 }
 .orange{
  color:#FF6600; 
