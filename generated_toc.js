@@ -20,7 +20,7 @@ window.onload = function () {
               level = parseInt(openLevel);
 
               var anchor = titleText.replace(/ /g, "_");
-              toc += "<li><a href=\"#" + anchor + "\">" + titleText
+              toc += "<li><a class=\"toc-link\" href=\"#" + anchor + "\">" + titleText
                   + "</a></li>";
 
               return "<h" + openLevel + "><a name=\"" + anchor + "\">"

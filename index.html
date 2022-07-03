@@ -9,13 +9,14 @@
     <title>Künstliche Intelligenz Gehirn vergleich</title>
     <style>
         @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500';
+
         body {
             margin: 0 auto;
             max-width: 50em;
             font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             line-height: 1.5;
             padding: 4em 1em;
-           /* background-color: black;*/
+            /* background-color: black;*/
             /*color: white;*/
             color: #444;
         }
@@ -30,41 +31,60 @@
         strong {
             color: #222;
         }
-        .link:hover{
+
+        .link:hover {
             border: 2px solid black;
             border-radius: 5px;
         }
+
         /*link while the mouse is pressed on it*/
-        .link:active{
+        .link:active {
             padding: 10px;
         }
+
         /*div to open sidebar on the left*/
         #sidebar-open {
             position: fixed;
-            border-radius: 10px;
-            padding: 20px;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
         }
-        .quote{
+
+        #sidebar-button {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            border-radius: 10px;
+            border: 2px solid grey;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .quote {
             padding: 20px;
-            background-color: rgba( 0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.1);
             border-radius: 5px;
         }
-        .quote-author{
+
+        .quote-author {
             text-align: right;
             padding: 0%;
             padding-right: 50px;
             font-weight: bold;
         }
-        #sidebar-button{
-            border-radius: 10px;
-            border: 2px solid grey;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.1);
+
+        #toc {
+            margin: 20px;
+        }
+
+        .toc-link {
+            text-decoration: none;
+        }
+
+        .toc-link:hover {
+            text-decoration: underline;
         }
     </style>
     <!--import stylesheet at sidebarjs.css-->
@@ -74,183 +94,262 @@
 </head>
 
 <body>
-    <div sidebarjs-toggle id="sidebar-open"><span id="sidebar-button">Inhaltsangabe</span></div>
+    <!--<div sidebarjs-toggle id="sidebar-open"><span id="sidebar-button">Inhaltsangabe</span></div>-->
+    <div sidebarjs-toggle id="sidebar-open"></div>
+    <span id="sidebar-button" id="sidebar-button" onclick="sidebarjs.open()">Inhaltsangabe</span>
     <div sidebarjs>
-      <nav>
-        <div id="toc">
-            <h3>Inhalt</h3>
-        </div>
-      </nav>
+        <nav>
+            <div id="toc">
+                <h3>Inhalt</h3>
+            </div>
+        </nav>
     </div>
     <script src="sidebarjs.min.js"></script>
     <script>
-    // Init SidebarJS
-    var sidebarjs = new SidebarJS.SidebarElement();
+        // Init SidebarJS
+        var sidebarjs = new SidebarJS.SidebarElement();
     </script>
     <div id="contents">
-    <!-- Header -->
-    <h1>Vergleich von neuronalen Netzwerken mit dem menschlichen Gehirn</h1>
-    <h2>
-        Aufbau eines neuronalen Netzwerkes    
-    </h2>
-    <div class="quote"><i>
-        A neural network is a machine learning algorithm that is used to model complex patterns in data. 
-        Neural networks are similar to other machine learning algorithms, 
-        but they are composed of a large number of interconnected processing nodes, or neurons, 
-        that can learn to recognize patterns of input data.
-    </i>
-    <p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
-    </div>
-    <p class="note">
-        Hinweis: Hier wird sich auf eine Art von neuronalen Netzwerken beschränkt, anhand der sich Parallelen zum Gehirn gut erklären lassen. Das Gesagte trifft nicht auf jedes neuronale Netzwerk zu     
-    </p>
-    <p>
-        Ein neuronales Netzwerk besteht, wie der Name erahnen lässt aus mehreren miteinander vernetzten Neuronen.     
-    </p>    
-    <img src="images/simple_neural_network.png" alt="Here should be an image"/>
-    <p class="note">
-        Hinweis: Neuronale Netzwerke bestehen in der Regel aus weitaus mehr Neuronen als hier dargestellt 
-    </p>
-    <p>
-       Die Verbindungen zwischen den digitalen Neuronen entsprechen den biologischen Synapsen, die eigentlichen Neuronen allem anderem. Die Verbindungen besitzen einen Wert namens <em>weight</em>, der jede <a href="https://de.wikipedia.org/wiki/Reelle_Zahl">reelle Zahl</a> sein kann. Neuronen haben 2 Werte, ihre <em>activation</em>(0.0-1.0) und ihre <em>bias</em>(ebenfalls jede reelle Zahl). <em>Weight</em> und <em>bias</em> werden durch den Lernprozess verändert, die <em>activation</em> ändert sich bei jeder Anwendung der Netzwerkes.
-    </p>
-     <img src="images/compare_neurons.png" alt="Here should be an image"/>
-    <p>
-        Die Neuronen sind in mehreren Schichten bzw. Layers angeordnet. Jedes Neuron hat eine Verbindung zu jedem anderen in den Layers davor und danach. Die erste Layer nennt man <span class="orange">Input-Layer</span> und die Letzte <span class="magenta">Output-Layer</span>. Dazwischen können sich noch mehrere sogenannte <span class="cyan">hidden layers</span> befinden, ein simples Netzwerk kann aber auch ohne hidden layers funktionieren.
-    </p>
-     <img src="images/the_layers.png"/>
-    <p>
-        Durch diesen Aufbau lässt sich das Reiz-Reaktions-Schema auch gut auf das neuronale Netzwerk anwenden. Der <span class="orange">Reiz</span> sind hier die Informationen, die der <span class="orange">Input-Layer (dem Rezeptor)</span> übergeben werden, also die <em>activation</em> aller Neuronen der Layer. Dieser <span class="orange">Reiz</span> wird dann durch die <span class="cyan">hidden layers</span> weiter verarbeitet, die hier eine dem <span class="cyan">zentralen Nervensystem</span> ähnliche Rolle annehmen. Die <span class="magenta">Output-Layer</span> repräsentiert letztendlich den <span class="magenta">Effektor</span>, die <em>activations</em> ihrer Neuronen sind die Reaktion. Diese <em>activations</em> können dann in den eigentlichen Output übersetzt werden, z.B. Bild, Text oder Audio.    
-    </p>
-    <h2>Vom Input zum Output</h2>
-    <p>
-        Da der Input oft nicht ursprünglich aus Zahlen zwischen 0.0 und 1.0 besteht, wird der eigentliche Input in diese Form übersetzt. Bei einem Schwarz-Weiß-Bild kann z.B. die Helligkeit jedes Pixels als solch eine Zahl beschrieben werden. Für jeden Pixel muss es dann ein Neuron in der Input-Layer geben, das diesen Wert als <em>activation</em> zugewiesen bekommt.
-    </p>
-    <img src="images/translating_images.png"/>
-    <p>
-        Aus den <em>activations</em> der Input-Layer und den <em>weights</em> der Verbindungen werden dann die <em>activations</em> für die nächste Layer berechnet. So werden alle Layers nacheinander basierend auf der jeweils vorherigen Layer berechnet, bis man für die Output-Layer das Resultat erhält.    
-    </p>
-    <img src="images/layer_after_layer.png"/>
-    <p>
-        Wie funktioniert also diese Berechnung? Der Wert für jedes Neuron der Layer wird nacheinander aus jedem Neuron der vorherigen Layer und den <em>weights</em> der Verbindungen berechnet. Auch hier gibt es eine Ähnlichkeit zum biologischen Gehirn. Wenn an den Dendriten eines biologischen Neurons mehrere Aktionspotentiale gleichzeitig ankommen werden diese addiert (räumliche Summation). Das digitale Neuron erhält alle „Aktionspotentiale“ der vorherigen Layer zeitgleich und addiert diese.
-    </p>
-    <img src="images/weighted_sum_step1.png"/>
-    <p>
-        Allerdings werden diese Potentiale mit den <em>weights</em> der jeweiligen Verbindung multipliziert, um die <em>weighted sum</em> zu erhalten. Wenn man diese Funktion auf den biologischen Kontext überträgt, wäre es so,  als würden die einzelnen Synapsen verschieden gut leiten. Das ist im Gehirn aber nicht der Fall. Außerdem können die Werte dadurch negativ werden, was im menschlichen Gehirn nicht stattfindet.
-    </p>
-    <img src="images/weighted_sum_step2.png"/>
-    <p>
-        Weil die <em>weights</em> zum einen größer als 1 und zum anderen negativ sein können, ist es möglich, dass das Ergebnis nicht zwischen 0 und 1, dem Wertebereich eines Neurons liegt. Deshalb wird der Wert mithilfe einer sogenannten <em>activation-function</em> in diese Reichweite übersetzt. Es gibt verschiedene solcher Funktionen, aber eine für dieses Thema besonders interessante ist <a href="https://deepai.org/machine-learning-glossary-and-terms/relu">ReLU</a>. Hier besteht nämlich eine Analogie zum Alles-Oder-Nichts-Prinzip bei der Reizweiterleitung im Gehirn. Wenn die <em>weighted sum</em> negativ ist, ist die Aktivation des Neurons 0. Der Schwellenwert liegt hier also anders als in der Biologie bei 0.
-    </p>
-    <img src="images/ReLU.png"/>
-    <p>
-        Der Schwellenwert ist aber nur dann 0, wenn es keine <em>bias</em> gibt, bzw. diese nicht 0 ist. Die des Neurons wird zu der <em>weighted sum</em> addiert und verschiebt so den Schwellenwert für eine Aktivierung (eine positive Bias erleichtert die Aktivierung, eine negative erschwert sie).     
-    </p>
-    <img src="images/weighted_sum_step3.png"/>
-    <p>
-        Lernen bedeutet bei einem neuronalen Netzwerk nichts anderes als möglichst gute Werte für die einzelnen <em>weights</em> und <em>biases</em> zu finden.    
-    </p>
-    <h2>Lernen</h2>
-    <h3>Wie das Gehirn lernt</h3>
-    <p class="note">Wie das Gehirn lernt ist nicht genau bekannt. Wir würden hier zum Projekt der Gruppe verweisen die sich damit befasst.</p>
-    <p>Eine weit verbreitete Theorie wie Verbindungen zwischen Neuronen im Gehirn verstärkt werden ist die Hebbian Theory. 
-        Sie besagt: „Neurons that Fire together wire together“. 
-        Das heißt, dass wenn Neuronen in kurzer Abfolge Nacheinander feuern, sich die Verbindungen zwischen ihnen Verstärken.
-        Will man etwa das Wort „Apfel“ ins englische übersetzen, so wird das beim Ersten mal etwas dauern. 
-        Man stellt sich das so vor als würde zuerst das Neuron für das Konzept „Apfel“ aktiviert werden 
-        <img style="width: auto;height: 300px;" src="images/denkt_an_apfel.png"  >
-        und dann über einen langen Umweg das Neuron für das Wort „Apple“. 
-        <img style="width: auto;height: 300px;" src="images/denkt_an_apple.png">
-        Da das feuern des Apple-Neurons kurzzeitig auf das des Apfel-Neurons folgt, entsteht eine/verstärkt sich die Verbindung zwischen den beiden Neuronen. 
-        Diese Theorie wird besser <a href="https://en.m.wikipedia.org/wiki/Hebbian_theory">hier auf Wikipedia erklärt</a>.
-        Diese Methode auf neuronale Netze anzuwenden hat jedoch nur teilweise Erfolg, deshalb wurden für neuronale Netze andere lern-Techniken entwickelt.</p>
-    <h3>Neuroevolution</h3>
-    <p>Die einfachste ist Evolution, auch bekannt als Neuroevolution. 
-        Bei dieser Technik werden mehrere Netze mit zufälligen Weights initialisiert. 
-        Dann wird getestet wie gut diese Modelle arbeiten und ihnen wird eine gewisse Punkteanzahl zugeteilt. 
-        Danach wird das beste Modell immer wieder leicht verändert kopiert um eine neue, bessere Generation zu erschaffen. 
-        Diese Netze werden dann wieder getestet usw. . Ein Beispiel solchen Lernens kann man hier sehen:  <div class="link"><a href="https://arnecode.github.io/flappy-bird-ai/" target="_blank"><img src="images/flappyai.png" width="20%" alt="https://arnecode.github.io/flappy-bird-ai/"></a></div>
-        Diese Art des Lernens ist zwar einfach, hört aber in komplexeren Aufgabenbereichen auf zu funktionieren. Deshalb gibt es noch eine andere Technik namens „Gradient Descent“</p>
-    <h3>Gradient Descent</h3>
-    <div class="quote"><i>
-        Gradient descent is a method for optimization. 
-        It is an iterative method that minimizes a function by following the gradient of the function. 
-        The gradient is the direction of the steepest descent. 
-        The algorithm is used in machine learning to find the parameters of a model that minimize a cost function.
-    </i>
-    <p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
-    </div>
-    <p>
-        Hier wird das Modell anhand von vorher gesammelten Datenpaaren trainiert, dem Input und dem gewünschten Output. 
-        Ein Beispiel wäre hier wie ein Mensch über einen längeren Zeitraum Flappy Bird spielt.
-        <p class="note">Hinweis: Die volle Erklärung würde den Rahmen dieses Projektes sprengen, deshalb vereinfachen wir sie an vielen Stellen.</p>
+        <!-- Header -->
+        <h1>Vergleich von neuronalen Netzwerken mit dem menschlichen Gehirn</h1>
+        <h2>
+            Aufbau eines neuronalen Netzwerkes
+        </h2>
+        <div class="quote"><i>
+                A neural network is a machine learning algorithm that is used to model complex patterns in data.
+                Neural networks are similar to other machine learning algorithms,
+                but they are composed of a large number of interconnected processing nodes, or neurons,
+                that can learn to recognize patterns of input data.
+            </i>
+            <p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
+        </div>
+        <p class="note">
+            Hinweis: Hier wird sich auf eine Art von neuronalen Netzwerken beschränkt, anhand der sich Parallelen zum
+            Gehirn gut erklären lassen. Das Gesagte trifft nicht auf jedes neuronale Netzwerk zu
+        </p>
+        <p>
+            Ein neuronales Netzwerk besteht, wie der Name erahnen lässt aus mehreren miteinander vernetzten Neuronen.
+        </p>
+        <img src="images/simple_neural_network.png" alt="Here should be an image" />
+        <p class="note">
+            Hinweis: Neuronale Netzwerke bestehen in der Regel aus weitaus mehr Neuronen als hier dargestellt
+        </p>
+        <p>
+            Die Verbindungen zwischen den digitalen Neuronen entsprechen den biologischen Synapsen, die eigentlichen
+            Neuronen allem anderem. Die Verbindungen besitzen einen Wert namens <em>weight</em>, der jede <a
+                href="https://de.wikipedia.org/wiki/Reelle_Zahl">reelle Zahl</a> sein kann. Neuronen haben 2 Werte, ihre
+            <em>activation</em>(0.0-1.0) und ihre <em>bias</em>(ebenfalls jede reelle Zahl). <em>Weight</em> und
+            <em>bias</em> werden durch den Lernprozess verändert, die <em>activation</em> ändert sich bei jeder
+            Anwendung der Netzwerkes.
+        </p>
+        <img src="images/compare_neurons.png" alt="Here should be an image" />
+        <p>
+            Die Neuronen sind in mehreren Schichten bzw. Layers angeordnet. Jedes Neuron hat eine Verbindung zu jedem
+            anderen in den Layers davor und danach. Die erste Layer nennt man <span class="orange">Input-Layer</span>
+            und die Letzte <span class="magenta">Output-Layer</span>. Dazwischen können sich noch mehrere sogenannte
+            <span class="cyan">hidden layers</span> befinden, ein simples Netzwerk kann aber auch ohne hidden layers
+            funktionieren.
+        </p>
+        <img src="images/the_layers.png" />
+        <p>
+            Durch diesen Aufbau lässt sich das Reiz-Reaktions-Schema auch gut auf das neuronale Netzwerk anwenden. Der
+            <span class="orange">Reiz</span> sind hier die Informationen, die der <span class="orange">Input-Layer (dem
+                Rezeptor)</span> übergeben werden, also die <em>activation</em> aller Neuronen der Layer. Dieser <span
+                class="orange">Reiz</span> wird dann durch die <span class="cyan">hidden layers</span> weiter
+            verarbeitet, die hier eine dem <span class="cyan">zentralen Nervensystem</span> ähnliche Rolle annehmen. Die
+            <span class="magenta">Output-Layer</span> repräsentiert letztendlich den <span
+                class="magenta">Effektor</span>, die <em>activations</em> ihrer Neuronen sind die Reaktion. Diese
+            <em>activations</em> können dann in den eigentlichen Output übersetzt werden, z.B. Bild, Text oder Audio.
+        </p>
+        <h2>Vom Input zum Output</h2>
+        <p>
+            Da der Input oft nicht ursprünglich aus Zahlen zwischen 0.0 und 1.0 besteht, wird der eigentliche Input in
+            diese Form übersetzt. Bei einem Schwarz-Weiß-Bild kann z.B. die Helligkeit jedes Pixels als solch eine Zahl
+            beschrieben werden. Für jeden Pixel muss es dann ein Neuron in der Input-Layer geben, das diesen Wert als
+            <em>activation</em> zugewiesen bekommt.
+        </p>
+        <img src="images/translating_images.png" />
+        <p>
+            Aus den <em>activations</em> der Input-Layer und den <em>weights</em> der Verbindungen werden dann die
+            <em>activations</em> für die nächste Layer berechnet. So werden alle Layers nacheinander basierend auf der
+            jeweils vorherigen Layer berechnet, bis man für die Output-Layer das Resultat erhält.
+        </p>
+        <img src="images/layer_after_layer.png" />
+        <p>
+            Wie funktioniert also diese Berechnung? Der Wert für jedes Neuron der Layer wird nacheinander aus jedem
+            Neuron der vorherigen Layer und den <em>weights</em> der Verbindungen berechnet. Auch hier gibt es eine
+            Ähnlichkeit zum biologischen Gehirn. Wenn an den Dendriten eines biologischen Neurons mehrere
+            Aktionspotentiale gleichzeitig ankommen werden diese addiert (räumliche Summation). Das digitale Neuron
+            erhält alle „Aktionspotentiale“ der vorherigen Layer zeitgleich und addiert diese.
+        </p>
+        <img src="images/weighted_sum_step1.png" />
+        <p>
+            Allerdings werden diese Potentiale mit den <em>weights</em> der jeweiligen Verbindung multipliziert, um die
+            <em>weighted sum</em> zu erhalten. Wenn man diese Funktion auf den biologischen Kontext überträgt, wäre es
+            so, als würden die einzelnen Synapsen verschieden gut leiten. Das ist im Gehirn aber nicht der Fall.
+            Außerdem können die Werte dadurch negativ werden, was im menschlichen Gehirn nicht stattfindet.
+        </p>
+        <img src="images/weighted_sum_step2.png" />
+        <p>
+            Weil die <em>weights</em> zum einen größer als 1 und zum anderen negativ sein können, ist es möglich, dass
+            das Ergebnis nicht zwischen 0 und 1, dem Wertebereich eines Neurons liegt. Deshalb wird der Wert mithilfe
+            einer sogenannten <em>activation-function</em> in diese Reichweite übersetzt. Es gibt verschiedene solcher
+            Funktionen, aber eine für dieses Thema besonders interessante ist <a
+                href="https://deepai.org/machine-learning-glossary-and-terms/relu">ReLU</a>. Hier besteht nämlich eine
+            Analogie zum Alles-Oder-Nichts-Prinzip bei der Reizweiterleitung im Gehirn. Wenn die <em>weighted sum</em>
+            negativ ist, ist die Aktivation des Neurons 0. Der Schwellenwert liegt hier also anders als in der Biologie
+            bei 0.
+        </p>
+        <img src="images/ReLU.png" />
+        <p>
+            Der Schwellenwert ist aber nur dann 0, wenn es keine <em>bias</em> gibt, bzw. diese nicht 0 ist. Die des
+            Neurons wird zu der <em>weighted sum</em> addiert und verschiebt so den Schwellenwert für eine Aktivierung
+            (eine positive Bias erleichtert die Aktivierung, eine negative erschwert sie).
+        </p>
+        <img src="images/weighted_sum_step3.png" />
+        <p>
+            Lernen bedeutet bei einem neuronalen Netzwerk nichts anderes als möglichst gute Werte für die einzelnen
+            <em>weights</em> und <em>biases</em> zu finden.
+        </p>
+        <h2>Lernen</h2>
+        <h3>Wie das Gehirn lernt</h3>
+        <p class="note">Wie das Gehirn lernt ist nicht genau bekannt. Wir würden hier zum Projekt der Gruppe verweisen
+            die sich damit befasst.</p>
+        <p>Eine weit verbreitete Theorie wie Verbindungen zwischen Neuronen im Gehirn verstärkt werden ist die Hebbian
+            Theory.
+            Sie besagt: „Neurons that Fire together wire together“.
+            Das heißt, dass wenn Neuronen in kurzer Abfolge Nacheinander feuern, sich die Verbindungen zwischen ihnen
+            Verstärken.
+            Will man etwa das Wort „Apfel“ ins englische übersetzen, so wird das beim Ersten mal etwas dauern.
+            Man stellt sich das so vor als würde zuerst das Neuron für das Konzept „Apfel“ aktiviert werden
+            <img style="width: auto;height: 300px;" src="images/denkt_an_apfel.png">
+            und dann über einen langen Umweg das Neuron für das Wort „Apple“.
+            <img style="width: auto;height: 300px;" src="images/denkt_an_apple.png">
+            Da das feuern des Apple-Neurons kurzzeitig auf das des Apfel-Neurons folgt, entsteht eine/verstärkt sich die
+            Verbindung zwischen den beiden Neuronen.
+            Diese Theorie wird besser <a href="https://en.m.wikipedia.org/wiki/Hebbian_theory">hier auf Wikipedia
+                erklärt</a>.
+            Diese Methode auf neuronale Netze anzuwenden hat jedoch nur teilweise Erfolg, deshalb wurden für neuronale
+            Netze andere lern-Techniken entwickelt.
+        </p>
+        <h3>Neuroevolution</h3>
+        <p>Die einfachste ist Evolution, auch bekannt als Neuroevolution.
+            Bei dieser Technik werden mehrere Netze mit zufälligen Weights initialisiert.
+            Dann wird getestet wie gut diese Modelle arbeiten und ihnen wird eine gewisse Punkteanzahl zugeteilt.
+            Danach wird das beste Modell immer wieder leicht verändert kopiert um eine neue, bessere Generation zu
+            erschaffen.
+            Diese Netze werden dann wieder getestet usw. . Ein Beispiel solchen Lernens kann man hier sehen:
+        <div class="link"><a href="https://arnecode.github.io/flappy-bird-ai/" target="_blank"><img
+                    src="images/flappyai.png" width="20%" alt="https://arnecode.github.io/flappy-bird-ai/"></a></div>
+        Diese Art des Lernens ist zwar einfach, hört aber in komplexeren Aufgabenbereichen auf zu funktionieren. Deshalb
+        gibt es noch eine andere Technik namens „Gradient Descent“</p>
+        <h3>Gradient Descent</h3>
+        <div class="quote"><i>
+                Gradient descent is a method for optimization.
+                It is an iterative method that minimizes a function by following the gradient of the function.
+                The gradient is the direction of the steepest descent.
+                The algorithm is used in machine learning to find the parameters of a model that minimize a cost
+                function.
+            </i>
+            <p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
+        </div>
+        <p>
+            Hier wird das Modell anhand von vorher gesammelten Datenpaaren trainiert, dem Input und dem gewünschten
+            Output.
+            Ein Beispiel wäre hier wie ein Mensch über einen längeren Zeitraum Flappy Bird spielt.
+        <p class="note">Hinweis: Die volle Erklärung würde den Rahmen dieses Projektes sprengen, deshalb vereinfachen
+            wir sie an vielen Stellen.</p>
 
         <details>
             <summary><strong>Wie es wirklich funktioniert</strong></summary>
             <iframe width="560" height="315"
-            src="https://www.youtube.com/embed?v=IHZwWFHWa-w&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=2">
+                src="https://www.youtube.com/embed?v=IHZwWFHWa-w&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&index=2">
             </iframe>
         </details>
-        Wir gehen zuerst einmal von einem sehr einfachem Neuronalen Netz aus. 
+        Wir gehen zuerst einmal von einem sehr einfachem Neuronalen Netz aus.
         Es hat einen Input und einen Output. Der Output soll immer der Input mal zwei sein.
         <img src="images/single_neuron.jpg">
-        Wenn man das Netzwerk zuerst zufällig initialisiert, werden die Werte nichts mit dem gewünschten Ergebnis zu tun haben.
-        Während des Lernens wird für jedes Datenpaar berechnet wie weit die Ausgabe des Neuronalen Netzes für einen gegebenen Input von dem gewünschten Output entfernt ist.
+        Wenn man das Netzwerk zuerst zufällig initialisiert, werden die Werte nichts mit dem gewünschten Ergebnis zu tun
+        haben.
+        Während des Lernens wird für jedes Datenpaar berechnet wie weit die Ausgabe des Neuronalen Netzes für einen
+        gegebenen Input von dem gewünschten Output entfernt ist.
         <img src="images/single_neuron_output.jpg">
         Dann werden die Weights so angepasst, dass das Ergebnis eher den gewünschten ähnelt. </br>
         In diesem Fall ist der Output kleiner als das gewünschte Ergebnis. <br>
-        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="font-family: calibri;font-size: 15px;">→</strong> Die Verbindung zwischen Input und Output wird verstärkt.
-    </p>
-    <p>
-        Bei mehreren Neuronen kann man sich das genauso vorstellen.
-        Angenommen an einem bestimmten Zeitpunkt hat das Modell folgende Entscheidungen getroffen.
-        <img src="images/multi_neuron_network_output.jpg">
-        Die Verbindungen werden nun so angepasst, dass die gewünschte Entscheidung wahrscheinlicher wird. Grün für positive Veränderung, Rot für negative.
-        <img style="width:60%" src="images/multi_neuron_network_weights_adjusted.jpg">
-    </p>
-<h2>Convolutional Neuronal Networks (CNN) - Rezeptives Feld</h2>
-<p class="note">
-       Hinweis: der Fokus liegt aufgrund des Vergleiches zum Auge nur auf der Bilderkennung     
-    </p>
-<h3>Rezeptives Feld:</h3>
-<p>
-    Auf der Netzhaut befinden sich deutlich mehr Rezeptoren als Nervenfasern im Sehnerv. Deshalb müssen die Informationen schon an diesem Punkt verrechnet und interpretiert werden. Es werden, bevor Signale in das Gehirn gelangen schon vereinfachte Muster wie z.B. Striche, Formen oder anderes dargestellt. (wie das genau funktioniert und was dabei herauskommt weiß man nicht, dafür ist das Gehirn zu wenig erforscht)
-</p>
-<h3>Convolutional Neuronal Networks:</h3>
-<div class="quote"><i>
-    A convolutional neural network (CNN) is a type of deep learning neural network that is generally used to analyze visual imagery. 
-    CNNs are similar to traditional neural networks in that they are made up of neurons that have learnable weights and biases. 
-    However, CNNs are different in that they have a special architecture that is specifically designed to take advantage of the 2D structure of images.
-</i>
-<p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
-</div>
-<p>
-    CNNs sind eine Form von hidden layers bestehend aus Filtern. Ein Filter ist (normalerweise) ein 3x3 Block gefüllt mit weights, wodurch ein bestimmtes Muster repräsentiert wird. Dieser scannt das vorliegende Bild und erkennt anhand der endgültigen Werte die Muster.
-</p>
-<img src="images/cnn.png"/>
-<p>
-    Dies passiert natürlich nicht nur einmal hintereinander, sondern so oft, wie es nötig ist, um ein Ergebnis zu erhalten, das die KI erkennen kann. <br>
-    Ein positiver Nebeneffekt der CNN ist die Datenminimierung, da für jedes 3x3 Feld, nur ein Wert ausgegeben werden muss.
-</p>
-<img src="images/cnn.gif"/>
-<p>
-    Zusammenfassend kann man sagen, dass sich die CNNs mit den rezeptiven Feldern ähneln, da bei beiden Methoden eine Datenminimierung stattfindet, indem man anstatt einzelne Pixel nur noch bestimmte Muster (oder was im Gehirn verwendet wird) weitergeleitet werden und damit, in dem man die einzelnen Muster zusammenführt (in der KI nach bestimmt vielen Schritten, im Gehirn direkt), ein Objekt oder Lebewesen auf dem Bild erkannt werden kann.
-</p>
-<h2>Zusätzliche Materialien</h2>
+        &nbsp;&nbsp;&nbsp;&nbsp;<strong style="font-family: calibri;font-size: 15px;">→</strong> Die Verbindung zwischen
+        Input und Output wird verstärkt.
+        </p>
+        <p>
+            Bei mehreren Neuronen kann man sich das genauso vorstellen.
+            Angenommen an einem bestimmten Zeitpunkt hat das Modell folgende Entscheidungen getroffen.
+            <img src="images/multi_neuron_network_output.jpg">
+            Die Verbindungen werden nun so angepasst, dass die gewünschte Entscheidung wahrscheinlicher wird. Grün für
+            positive Veränderung, Rot für negative.
+            <img style="width:60%" src="images/multi_neuron_network_weights_adjusted.jpg">
+        </p>
+        <h2>Convolutional Neuronal Networks (CNN) - Rezeptives Feld</h2>
+        <p class="note">
+            Hinweis: der Fokus liegt aufgrund des Vergleiches zum Auge nur auf der Bilderkennung
+        </p>
+        <h3>Rezeptives Feld:</h3>
+        <p>
+            Auf der Netzhaut befinden sich deutlich mehr Rezeptoren als Nervenfasern im Sehnerv. Deshalb müssen die
+            Informationen schon an diesem Punkt verrechnet und interpretiert werden. Es werden, bevor Signale in das
+            Gehirn gelangen schon vereinfachte Muster wie z.B. Striche, Formen oder anderes dargestellt. (wie das genau
+            funktioniert und was dabei herauskommt weiß man nicht, dafür ist das Gehirn zu wenig erforscht)
+        </p>
+        <h3>Convolutional Neuronal Networks:</h3>
+        <div class="quote"><i>
+                A convolutional neural network (CNN) is a type of deep learning neural network that is generally used to
+                analyze visual imagery.
+                CNNs are similar to traditional neural networks in that they are made up of neurons that have learnable
+                weights and biases.
+                However, CNNs are different in that they have a special architecture that is specifically designed to
+                take advantage of the 2D structure of images.
+            </i>
+            <p class="quote-author"><a href="https://gpt3demo.com/product/gpt-3" target="_blank">GPT3</a></p>
+        </div>
+        <p>
+            CNNs sind eine Form von hidden layers bestehend aus Filtern. Ein Filter ist (normalerweise) ein 3x3 Block
+            gefüllt mit weights, wodurch ein bestimmtes Muster repräsentiert wird. Dieser scannt das vorliegende Bild
+            und erkennt anhand der endgültigen Werte die Muster.
+        </p>
+        <img src="images/cnn.png" />
+        <p>
+            Dies passiert natürlich nicht nur einmal hintereinander, sondern so oft, wie es nötig ist, um ein Ergebnis
+            zu erhalten, das die KI erkennen kann. <br>
+            Ein positiver Nebeneffekt der CNN ist die Datenminimierung, da für jedes 3x3 Feld, nur ein Wert ausgegeben
+            werden muss.
+        </p>
+        <img src="images/cnn.gif" />
+        <p>
+            Zusammenfassend kann man sagen, dass sich die CNNs mit den rezeptiven Feldern ähneln, da bei beiden Methoden
+            eine Datenminimierung stattfindet, indem man anstatt einzelne Pixel nur noch bestimmte Muster (oder was im
+            Gehirn verwendet wird) weitergeleitet werden und damit, in dem man die einzelnen Muster zusammenführt (in
+            der KI nach bestimmt vielen Schritten, im Gehirn direkt), ein Objekt oder Lebewesen auf dem Bild erkannt
+            werden kann.
+        </p>
+        <h2>Zusätzliche Materialien</h2>
 
-<h3>Genauere Erklärung von neuronalen Netzwerken</h3>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h3>Artikel die bei der Entstehung dieser Website geholfen haben</h3>
-<ul>
-    <li><a href="https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939">Convolutional Neural Networks, Explained</a></li>
-    <li><a href="https://deeplizard.com/learn/video/YRhxdVk_sIs">Convolutional Neural Networks (CNNs) explained</a></li>
-    <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">KI generiert OnlyFans-Bilder</a> </li>
-</ul>
-<h3>Bildquellen</h3>
-<ul>
-    <li><a href="https://qph.fs.quoracdn.net/main-qimg-e496557b76d528aab7aead55d83fc50c">CNN Pic1</a></li>
-</ul>
-</div>
+        <h3>Genauere Erklärung von neuronalen Netzwerken</h3>
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/videoseries?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <h3>Artikel die bei der Entstehung dieser Website geholfen haben</h3>
+        <ul>
+            <li><a href="https://towardsdatascience.com/convolutional-neural-networks-explained-9cc5188c4939">Convolutional
+                    Neural Networks, Explained</a></li>
+            <li><a href="https://deeplizard.com/learn/video/YRhxdVk_sIs">Convolutional Neural Networks (CNNs)
+                    explained</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">KI generiert OnlyFans-Bilder</a> </li>
+        </ul>
+        <h3>Bildquellen</h3>
+        <ul>
+            <li><a href="https://qph.fs.quoracdn.net/main-qimg-e496557b76d528aab7aead55d83fc50c">CNN Pic1</a></li>
+        </ul>
+    </div>
 </body>
 
 </html>
