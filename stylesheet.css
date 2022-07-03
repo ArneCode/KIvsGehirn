@@ -13,10 +13,13 @@ img{
 }
 .orange{
  color:#FF6600; 
+ font-weight:bold;
 }
 .magenta{
  color: #FF00FF; 
+ font-weight:bold;
 }
 .cyan{
  color: #00FFBB; 
+ font-weight:bold;
 }
