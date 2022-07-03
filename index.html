@@ -101,6 +101,33 @@
         Durch diesen Aufbau lässt sich das Reiz-Reaktions-Schema auch gut auf das neuronale Netzwerk anwenden. Der <span class="orange">Reiz</span> sind hier die Informationen, die der <span class="orange">Input-Layer (dem Rezeptor)</span> übergeben werden, also die <em>activation</em> aller Neuronen der Layer. Dieser <span class="orange">Reiz</span> wird dann durch die <span class="cyan">hidden layers</span> weiter verarbeitet, die hier eine dem <span class="cyan">zentralen Nervensystem</span> ähnliche Rolle annehmen. Die <span class="magenta">Output-Layer</span> repräsentiert letztendlich den <span class="magenta">Effektor</span>, die <em>activations</em> ihrer Neuronen sind die Reaktion. Diese <em>activations</em> können dann in den eigentlichen Output übersetzt werden, z.B. Bild, Text oder Audio.    
     </p>
     <h2>Vom Input zum Output</h2>
+    <p>
+        Da der Input oft nicht ursprünglich aus Zahlen zwischen 0.0 und 1.0 besteht, wird der eigentliche Input in diese Form übersetzt. Bei einem Schwarz-Weiß-Bild kann z.B. die Helligkeit jedes Pixels als solch eine Zahl beschrieben werden. Für jeden Pixel muss es dann ein Neuron in der Input-Layer geben, das diesen Wert als <em>activation</em> zugewiesen bekommt.
+    </p>
+    <img src="images/translating_images.png"/>
+    <p>
+        Aus den <em>activations</em> der Input-Layer und den <em>weights</em> der Verbindungen werden dann die <em>activations</em> für die nächste Layer berechnet. So werden alle Layers nacheinander basierend auf der jeweils vorherigen Layer berechnet, bis man für die Output-Layer das Resultat erhält.    
+    </p>
+    <img src="images/layer_after_layer.png"/>
+    <p>
+        Wie funktioniert also diese Berechnung? Der Wert für jedes Neuron der Layer wird nacheinander aus jedem Neuron der vorherigen Layer und den <em>weights</em> der Verbindungen berechnet. Auch hier gibt es eine Ähnlichkeit zum biologischen Gehirn. Wenn an den Dendriten eines biologischen Neurons mehrere Aktionspotentiale gleichzeitig ankommen werden diese addiert (räumliche Summation). Das digitale Neuron erhält alle „Aktionspotentiale“ der vorherigen Layer zeitgleich und addiert diese.
+    </p>
+    <img src="images/weighted_sum_step1.png"/>
+    <p>
+        Allerdings werden diese Potentiale mit den <em>weights</em> der jeweiligen Verbindung multipliziert, um die <em>weighted sum</em> zu erhalten. Wenn man diese Funktion auf den biologischen Kontext überträgt, wäre es so,  als würden die einzelnen Synapsen verschieden gut leiten. Das ist im Gehirn aber nicht der Fall. Außerdem können die Werte dadurch negativ werden, was im menschlichen Gehirn nicht stattfindet.
+    </p>
+    <img src="images/weighted_sum_step2.png"/>
+    <p>
+        Weil die <em>weights</em> zum einen größer als 1 und zum anderen negativ sein können, ist es möglich, dass das Ergebnis nicht zwischen 0 und 1, dem Wertebereich eines Neurons liegt. Deshalb wird der Wert mithilfe einer sogenannten <em>activation-function</em> in diese Reichweite übersetzt. Es gibt verschiedene solcher Funktionen, aber eine für dieses Thema besonders interessante ist <a href="https://deepai.org/machine-learning-glossary-and-terms/relu">ReLU</a>. Hier besteht nämlich eine Analogie zum Alles-Oder-Nichts-Prinzip bei der Reizweiterleitung im Gehirn. Wenn die <em>weighted sum</em> negativ ist, ist die Aktivation des Neurons 0. Der Schwellenwert liegt hier also anders als in der Biologie bei 0.
+    </p>
+    <img src="images/ReLU.png"/>
+    <p>
+        Der Schwellenwert ist aber nur dann 0, wenn es keine <em>bias</em> gibt, bzw. diese nicht 0 ist. Die des Neurons wird zu der <em>weighted sum</em> addiert und verschiebt so den Schwellenwert für eine Aktivierung (eine positive Bias erleichtert die Aktivierung, eine negative erschwert sie).     
+    </p>
+    <img src="images/weighted_sum_step3.png"/>
+    <p>
+        Lernen bedeutet bei einem neuronalen Netzwerk nichts anderes als möglichst gute Werte für die einzelnen <em>weights</em> und <em>biases</em> zu finden.    
+    </p>
     <h2>Lernen</h2>
     <h3>Wie das Gehirn lernt</h3>
     Wie das Gehirn lernt ist nicht genau bekannt. Wir würden hier zum Projekt der Gruppe verweisen die sich damit befasst.
